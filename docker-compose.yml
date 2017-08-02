@@ -1,0 +1,23 @@
+version: "3"
+services:
+  web:
+    build:
+      context: .
+      dockerfile: rails/Dockerfile
+    links:
+      - db
+      - mail
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/myapp
+    command: /bin/start_server.sh
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
