@@ -5,15 +5,15 @@ Basic docker-compose setup to run project
 * app folder must include app source before building image
 * Gemfile is bundled upon building or first start
 
-To start things up
+To start things up (or continue working)
 
 ` ./scripts/start.sh `
 
-To stop working
+To stop working (without destroying containers)
 
 ` ./scripts/stop.sh `
 
-To remove generated images & containers
+To remove generated images & containers (**destroys databases in containers**)
 
 ` ./scripts/clean.sh `
 
